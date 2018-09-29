@@ -6,6 +6,8 @@
 #include "bibliotecaEstructuras.h"
 #include "bibliotecaGetsYComprobaciones.h"
 #include "ejercicioAlumnos.h"
+#define LIBRE 0
+#define OCUPADO 1
 
 void mostrarUnAlumno(sAlumno listado[], int indice)
 {
@@ -210,4 +212,43 @@ int modificacionDeAlumno(sAlumno listado[])
     }
     }
     return flag;
+}
+
+int eGen_init( sAlumno listado[],int limite)
+{
+    int retorno = -1;
+    int i;
+    if(limite > 0 && listado != NULL)
+    {
+        retorno = 0;
+        for(i=0; i<limite; i++)
+        {
+            listado[i].estado= LIBRE;
+            listado[i].legajo= 0;
+        }
+    }
+    return retorno;
+}
+
+
+int eGen_siguienteId(sAlumno listado[],int limite)
+{
+    int retorno = 0;
+    int i;
+    if(limite > 0 && listado != NULL)
+    {
+        for(i=0; i<limite; i++)
+        {
+            if(listado[i].estado == OCUPADO)
+            {
+                    if(listado[i].legajo>retorno)
+                    {
+                         retorno=listado[i].legajo;
+                    }
+
+            }
+        }
+    }
+
+    return retorno+1;
 }

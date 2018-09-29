@@ -103,3 +103,20 @@ int modificacionDeAlumno(sAlumno[]);
  *
  */
 void inicializarAlumnos(sAlumno[], int);
+
+/** \brief inicia el campo estado en 0 (libre) y el campo legajo en 0
+ *
+ * \param sAlumno[] array de alumnos
+ * \param  int tamaño del array
+ * \return int -1 si no se realizo, 0 si se realizo
+ *
+ */
+int eGen_init(sAlumno[],int );
+/** \brief da el numero del proximo id a ingresar
+ *
+ * \param sAlumno[] array de alumnos
+ * \param  int  tamaño del array
+ * \return int 0 si no se realizo, numero del proximo id
+ *
+ */
+int eGen_siguienteId(sAlumno[] ,int );
