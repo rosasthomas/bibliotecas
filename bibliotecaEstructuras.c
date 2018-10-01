@@ -122,7 +122,7 @@ int altaDeAlumno(sAlumno listado[])
     int indiceLugarLibre;
 
     indiceLugarLibre = buscarPrimerOcurrenciaEstado(listado, T, VACIO);
-    if(indiceLugarLibre == VACIO)
+    if(indiceLugarLibre == -1)
     {
         printf("\nNo quedan espacios libres.\n");
         bandera = 0;
