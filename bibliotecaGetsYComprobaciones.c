@@ -98,7 +98,7 @@ int isPhone(char array[])
 void getString(char mensaje[], char input[])
 {
     printf("%s", mensaje);
-    scanf("%s", input);
+    gets(input);
 }
 
 
